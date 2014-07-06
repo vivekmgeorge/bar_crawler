@@ -1,5 +1,4 @@
 require 'sqlite3'
-load 'beer_crawl_setup.rb'
 
 class Bar
 

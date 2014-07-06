@@ -1,8 +1,9 @@
 require 'yelp'
 require 'SQLite3'
+require 'oauth'
 # load 'controller.rb'
 
-$db = SQLite3::Database.open( 'barcrawl.db' )
+$db = SQLite3::Database.open('barcrawl.db')
 
 
 consumer_key = 'bfWEoo4IOk7BAooDHvLoAA'
@@ -18,12 +19,17 @@ client = Yelp::Client.new({ consumer_key: consumer_key,
                           })
 
 params = { term: 'nightlife',
-           limit: 5,
+           limit: 1,
            category_filter: 'bars', 
            sort: 2
          }
 
+
+locale = {location: '48 wall st, ny, ny'}
+
+
 response = client.search('New York', params)
+ 
 
 # p response.display_address.postal_code
 
@@ -35,12 +41,17 @@ response = client.search('New York', params)
 
 response.businesses.each do |bar|
 
-
 	$db.execute("INSERT INTO bars (bar_name, rating, address, zip)
             VALUES (?, ?, ?, ?)", [bar.name, bar.rating, bar.location.display_address.join(', '), bar.location.display_address[2].split(' ').pop])
 end
 
 
+
+
+############
+
+# easy display of postal_code
+response.businesses[0].location.postal_code
 
 
 
