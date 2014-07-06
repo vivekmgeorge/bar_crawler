@@ -21,7 +21,7 @@ client = Yelp::Client.new({ consumer_key: consumer_key,
 params = { term: 'nightlife',
            limit: 1,
            category_filter: 'bars', 
-           sort: 2
+           sort: 0
          }
 
 
@@ -53,7 +53,13 @@ end
 # easy display of postal_code
 response.businesses[0].location.postal_code
 
+# cross streets
+response.businesses[0].location.cross_streets
 
+>> response.businesses[0].location.address
+=> ["76 4th Ave"]
+
+response.businesses[0].url
 
 
 
