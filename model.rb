@@ -14,7 +14,6 @@ class Bar
   def get_bars
 	  bar_search = $db.execute( "SELECT * FROM bars WHERE zip = crawler.zip ")
   end
-
 end
 
 class Crawler
