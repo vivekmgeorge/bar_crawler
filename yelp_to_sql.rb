@@ -1,6 +1,5 @@
 require 'SQLite3'
 module BarCrawl
-
 	def self.setup
 		$db = SQLite3::Database.new( 'barcrawl.db' )
 
@@ -33,9 +32,7 @@ module BarCrawl
 		  );
 
 		SQL
-
 	end
-		
 end
 
 BarCrawl.setup

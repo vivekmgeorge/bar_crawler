@@ -9,9 +9,7 @@ $auth_token = 'f844364e6b636cad7d4e82f7757017c4'
 
 class Controller
 	def initialize
-		# puts "hi"
 		@view = View.new
-		# p @view
 		get_user_input
 	end
 
@@ -58,6 +56,5 @@ class Controller
 		)
 	end
 end
-
 
 Controller.new

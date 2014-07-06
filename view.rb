@@ -10,5 +10,4 @@ class View
   def puts_zip
     puts "Please input your zip code."
   end
-
 end

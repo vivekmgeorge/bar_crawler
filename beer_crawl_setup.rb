@@ -1,11 +1,9 @@
 require 'yelp'
 
-
 consumer_key = 'bfWEoo4IOk7BAooDHvLoAA'
 consumer_secret = '5JxVclhb22smmLQf29LgApMFu4s'
 token = 'jBafeQSXWX5NjUVnSdD9iLEH1yRMBUOB'
 token_secret = '36GnODrWGkB1H2pmtgbakm-X3tc'
-
 
 client = Yelp::Client.new({ consumer_key: consumer_key,
                             consumer_secret: consumer_secret,
@@ -20,7 +18,6 @@ params = { term: 'nightlife',
          }
 
 response = client.search('New York', params)
-
 
 result_array = []
 

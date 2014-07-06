@@ -2,7 +2,6 @@ require 'sqlite3'
 load 'beer_crawl_setup.rb'
 
 class Bar
-
 	attr_accessor :name, :rating, :address
 
 	def initialize(name, rating, address, zip)
@@ -12,14 +11,13 @@ class Bar
 		@zip = zip
 	end
 
-  	def get_bars
-	    bar_search = $db.execute( "SELECT * FROM bars WHERE zip = crawler.zip ")
-  	end
+  def get_bars
+	  bar_search = $db.execute( "SELECT * FROM bars WHERE zip = crawler.zip ")
+  end
 
 end
 
 class Crawler
-
 	attr_accessor :cell, :username, :zip
 
 	def initialize(cell, username, zip)
@@ -27,5 +25,4 @@ class Crawler
 		@username = username
 		@zip = zip
 	end
-
 end 
